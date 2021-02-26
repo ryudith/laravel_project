@@ -1,0 +1,50 @@
+npm install
+npm install tailwindcss
+npm run dev
+
+###
+
+php artisan make:model Loan -m
+php artisan make:model Pay -m
+php artisan make:controller Frontend\HomeController
+php artisan make:controller Frontend\RegisterController
+php artisan make:controller Frontend\LoginController
+
+php artisan make:controller Backend\LogoutController
+php artisan make:controller Backend\DashboardController
+php artisan make:controller Backend\ProfileController
+php artisan make:controller Backend\LoanController
+php artisan make:controller Backend\PayController
+
+php artisan make:event UserLogin
+php artisan make:listener UserLoginSuccess
+php artisan make:migration add_last_login_user
+php artisan migrate
+
+php artisan make:migration complete_loan_column
+php artisan migrate
+
+php artisan make:migration delete_loans_create_lends_table --table=lends
+php artisan migrate
+
+mklink /D H:\work\web\laravel_playground\utang-lo\public\upload H:\work\web\laravel_playground\utang-lo\storage\app\public\upload
+
+php artisan make:migration create_pay_tables --table=pays
+php artisan migrate
+
+php artisan make:migration add_column_data_owner
+php artisan migrate
+
+
+
+
+
+https://medium.com/@tedoharischandra29/membangun-dan-testing-rest-api-dengan-crud-sederhana-laravel-687a7d96ab3b
+
+https://laravel.com/docs/8.x/authentication
+
+https://blog.trigent.com/multiple-authentication-system-using-guards-in-laravel/
+
+https://rizkimufrizal.github.io/belajar-iso-8583/
+
+https://laravel.com/api/8.x/
